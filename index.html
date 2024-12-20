@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 300px;
+            margin: 100px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            background: #5cb85c;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background: #4cae4c;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container" id="login-container">
+    <h2>Login</h2>
+    <form id="login-form">
+        <input type="text" id="username" placeholder="Nama Pengguna" required>
+        <input type="password" id="password" placeholder="Kata Sandi" required>
+        <input type="submit" value="Login">
+    </form>
+    <p id="error-message" style="color: red; display: none;"></p>
+</div>
+
+<div class="container" id="info-container" style="display: none;">
+    <h2>Informasi Player</h2>
+    <p id="device-info" ></p>
+    
+     <h4>DEVICE ANDA TELAH TERHUBUNG DENGAN SERVER KAMI. DI MOHON UNTUK TIDAK ANEH-ANEH SELAMA BERADA DI TIM AMBALONA SEPERTI : <p>-menyebarkan informasi ambalona ke tim lain <br>-mengeshare sesuatu yang telah di share di ambalona ke tim lain.<br>-menceritakan keburukan/aib yang berkaitan dengan ambalona ke tim lain. <br>Jika melanggar kami akan menindaklanjuti kamu dengan memanfaatkan device mu yang telah terhubung ke server kami</H4>
+     
+     <p>
+     				
+     				<h3>BACA DAN TERAPKAN</H3>
+     				<p>Jika ada yang menghina kamu dengan ucapan Ilegal maka kamu wajib menentang atau bahkan menghina player tersebut seperti : gw r5 dek sini uv.<p>
+     								<p>Di mohon untuk tidak takut terhadap siapa pun<p>
+     															
+     												<p>DI MOHON UNTUK MEMASANG FILE BERIKUT KE DALAM CLEO GTA SAMP KAMU UNTUK MEMPERLANCAR GAMEPLAY<P>
+     																<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Kecil</title>
+    <style>
+        .small-button {
+            padding: 5px 10px;
+            font-size: 14px;
+            color: white;
+            background-color: blue;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<a href="../BAHAN-SOTOT-R5.zip">
+    <button class="small-button">Download Bahan Sotot</button>
+</a>
+
+</body>
+</html>
+
+
+     																<p>sebelum sotot diwajibkan mengeklik f9 dan ketika sotot di wajibkan untuk selalu melompat (jump shoot) </p>
+     
+     
+    <p>DILARANG SS WEBSITE INI</P>
+    <P>dilarang menyebarkan file dari website ini<p>
+</div>
+
+<script>
+    const users = {
+        'AkmalXambalona': 'sotot',
+        'BerunoXambalona': 'suki',
+        'RapzXambalona': 'amba',
+         'AkmalXambalona ': 'sotot',
+        'BerunoXambalona ': 'suki',
+        'RapzXambalona ': 'amba',
+         'akmalxambalona': 'sotot',
+        'berunoxambalona': 'suki',
+        'rapzxambalona': 'amba'
+    };
+
+    document.getElementById('login-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        const errorMessage = document.getElementById('error-message');
+
+        if (users[username] && users[username] === password) {
+            // Login berhasil
+            document.getElementById('login-container').style.display = 'none';
+            document.getElementById('info-container').style.display = 'block';
+
+            // Mengambil alamat IP
+            fetch('https://api.ipify.org?format=json')
+                .then(response => response.json())
+                .then(data => {
+                    const ipAddress = data.ip;
+                    const deviceInfo = `Nama Pengguna: ${username}<br>IP Address: ${ipAddress}`;
+                    document.getElementById('device-info').innerHTML = deviceInfo;
+                })
+                .catch(error => {
+                    console.error('Error fetching IP address:', error);
+                    const deviceInfo = `Nama Pengguna: ${username}<br>IP Address: Tidak dapat diambil`;
+                    document.getElementById('device-info').innerHTML = deviceInfo;
+                });
+        } else {
+            // Login gagal
+            errorMessage.innerText = 'Nama pengguna atau kata sandi salah!';
+            errorMessage.style.display = 'block';
+        }
+    });
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+<script>
+				document.addEventListener('keydown', function(event) {
+    // Contoh untuk mencegah Ctrl + S dan Ctrl + P
+    if ((event.ctrlKey && event.key === 's') || (event.ctrlKey && event.key === 'p')) {
+        event.preventDefault();
+        alert('Tangkapan layar tidak diizinkan!');
+    }
+});
+
+<script>
